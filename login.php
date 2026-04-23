@@ -91,23 +91,40 @@ if (isset($_POST['username'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (empty($username) || empty($password)) {
+  if (empty($username) || empty($password)) {
         echo "Data Tidak Boleh kosong";
-    } else {
-        $userquery = mysqli_fetch_array(mysqli_query($koneksi, 
-        "SELECT * FROM users WHERE username = '$username' AND password = '$password'"));
+  } else {
+    $userquery = mysqli_fetch_array(mysqli_query($koneksi, 
+    "SELECT * FROM users WHERE username = '$username'"));
 
-        if ($userquery) {
-            $_SESSION['role'] = $userquery['role'];
-            $_SESSION['username'] = $username;
-            header("location:index.php");
+    if ($userquery) {
+      if ($userquery['password'] == $password) {
+        $_SESSION['role'] = $userquery['role'];
+        $_SESSION['username'] = $username;
+
+        if($userquery['role'] == 'guru' || $userquery['role'] == 'siswa'){
+          if ($userquery['password'] == '1234') {
+            header("location:index.php?page=ganti_password");
           } else {
-            echo '<div class="alert alert-danger alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-            <h5><i class="icon fas fa-ban"></i> Alert!</h5>
-            Login gagal
-            </div>';
+            header("location:index.php");
+          }
+        } else {
+          header("location:index.php");
         }
+      } else {
+        echo '<div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+        Password salah
+        </div>';
       }
+    } else {
+        echo '<div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+        Login gagal
+        </div>';
     }
+  }
+}
 ?>
