@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Data Guru</h1>
+                <h1 class="m-0 text-dark">Data Ekstrakurikuler</h1>
             </div>
         </div>
     </div>
@@ -11,16 +11,16 @@
 <?php
 if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
-        $kd = $_GET['kd'];
+        $id = $_GET['id'];
 
-        $query = mysqli_query($koneksi, "DELETE FROM guru WHERE kd_guru = '$kd'");
+        $query = mysqli_query($koneksi, "DELETE FROM ekstra_2511500020 WHERE id_ekstra020 = '$id'");
 
         if ($query) {
             echo '
             <div class="alert alert-warning alert-dismissible">
                 Berhasil Di Hapus
             </div>';
-            echo '<meta http-equiv="refresh" content="1;url=index.php?page=guru">';
+            echo '<meta http-equiv="refresh" content="1;url=index.php?page=ekstra2511500020">';
         }
     }
 }
@@ -31,20 +31,19 @@ if (isset($_GET['action'])) {
         <div class="card">
             <div class="card-body">
 
-                <a href="index.php?page=tambah_guru" class="btn btn-primary btn-sm">
-                    Tambah Guru
+                <a href="index.php?page=tambah_ekstra2511500020" class="btn btn-primary btn-sm">
+                    Tambah Ekstrakurikuler
                 </a>
 
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>NO</th>
-                            <th>Kode guru</th>
-                            <th>Nama guru</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Pendidikan Terakhir</th>
-                            <th>No. HP</th>
-                            <th>Alamat</th>
+                            <th>ID Ekstrakurikuler</th>
+                            <th>Nama Ekstrakurikuler</th>
+                            <th>Keterangan</th>
+                            <th>Semester</th>
+                            <th>Tahun Ajaran</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -52,25 +51,24 @@ if (isset($_GET['action'])) {
                     <tbody>
                         <?php
                         $no = 0;
-                        $query = mysqli_query($koneksi, "SELECT * FROM guru");
+                        $query = mysqli_query($koneksi, "SELECT * FROM ekstra_2511500020");
 
                         while ($result = mysqli_fetch_array($query)) {
                             $no++;
                         ?>
                             <tr>
                                 <td><?= $no; ?></td>
-                                <td><?= $result['kd_guru']; ?></td>
-                                <td><?= $result['nm_guru']; ?></td>
-                                <td><?= $result['jenkel']; ?></td>
-                                <td><?= $result['pend_terakhir']; ?></td>
-                                <td><?= $result['hp']; ?></td>
-                                <td><?= $result['alamat']; ?></td>
+                                <td><?= $result['id_ekstra020']; ?></td>
+                                <td><?= $result['nama_ekstra020']; ?></td>
+                                <td><?= $result['ket020']; ?></td>
+                                <td><?= $result['semester020']; ?></td>
+                                <td><?= $result['thn_ajaran020']; ?></td>
                                 <td>
-                                    <a href="index.php?page=guru&action=hapus&kd=<?= $result['kd_guru']; ?>">
+                                    <a href="index.php?page=ekstra2511500020&action=hapus&id=<?= $result['id_ekstra020']; ?>">
                                         <span class="badge badge-danger">Hapus</span>
                                     </a>
 
-                                    <a href="index.php?page=edit_guru&kd=<?= $result['kd_guru']; ?>">
+                                    <a href="index.php?page=edit_ekstra2511500020&id=<?= $result['id_ekstra020']; ?>">
                                         <span class="badge badge-warning">Edit</span>
                                     </a>
                                 </td>

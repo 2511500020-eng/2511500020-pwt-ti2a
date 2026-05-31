@@ -32,7 +32,7 @@ if (isset($_GET['action'])) {
             <div class="card-body">
 
                 <a href="index.php?page=tambah_siswa" class="btn btn-primary btn-sm">
-                    Tambah siswa
+                    Tambah Siswa
                 </a>
 
                 <table class="table table-striped">

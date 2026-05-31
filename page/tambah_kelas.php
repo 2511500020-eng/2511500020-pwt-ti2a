@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Data Mata Pelajaran</h1>
+                <h1 class="m-0 text-dark">Tambah Mata Pelajaran</h1>
             </div>
         </div>
     </div>
@@ -18,6 +18,7 @@ if ($datakode) {
     $kode = (int) $nilaikode;
     $kode = $kode + 1;
     $hasilkode = "K-" . str_pad($kode, 3, "0", STR_PAD_LEFT);
+    $hasilkodeJ = "J-" . str_pad($kode, 3, "0", STR_PAD_LEFT);
 } else {
     $hasilkode = "K-001";
 }
