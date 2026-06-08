@@ -62,7 +62,7 @@ if (isset($_POST['tambah'])) {
                 <form method="POST" action="">
 
                     <div class="form-group">
-                        <label for="nis">Kode siswa</label>
+                        <label for="nis">NIS</label>
                         <input 
                             type="text" 
                             name="nis" 

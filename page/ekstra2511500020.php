@@ -64,7 +64,7 @@ if (isset($_GET['action'])) {
                                 <td><?= $result['semester020']; ?></td>
                                 <td><?= $result['thn_ajaran020']; ?></td>
                                 <td>
-                                    <a href="index.php?page=ekstra2511500020&action=hapus&id=<?= $result['id_ekstra020']; ?>">
+                                    <a href="index.php?page=ekstra2511500020&action=hapus&id=<?= $result['id_ekstra020']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus ekstrakurikuler ini?')">
                                         <span class="badge badge-danger">Hapus</span>
                                     </a>
 

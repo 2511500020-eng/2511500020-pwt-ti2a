@@ -13,6 +13,7 @@ if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
         $kd = $_GET['kd'];
 
+        mysqli_query($koneksi, "DELETE FROM users WHERE username = '$kd'");
         $query = mysqli_query($koneksi, "DELETE FROM siswa WHERE nis = '$kd'");
 
         if ($query) {
@@ -63,7 +64,7 @@ if (isset($_GET['action'])) {
                                 <td><?= $result['hp']; ?></td>
                                 <td><?= $result['nm_kelas']; ?></td>
                                 <td>
-                                    <a href="index.php?page=siswa&action=hapus&kd=<?= $result['nis']; ?>">
+                                    <a href="index.php?page=siswa&action=hapus&kd=<?= $result['nis']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus siswa ini?')">
                                         <span class="badge badge-danger">Hapus</span>
                                     </a>
 

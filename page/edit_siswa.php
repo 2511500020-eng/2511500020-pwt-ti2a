@@ -79,7 +79,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group">
                         <label for="jenkel">Jenis Kelamin</label>
                         <select class="form-control" name="jenkel" id="jenkel">
-                            <option disabled selected>-- Pilih Jenis Kelamin -- </option>
+                            <option disabled>-- Pilih Jenis Kelamin -- </option>
                             <option value="Laki-laki" <?= ($edit['jenkel'] == 'Laki-laki') ? 'selected' : '' ?>>Laki-laki</option>
                             <option value="Perempuan" <?= ($edit['jenkel'] == 'Perempuan') ? 'selected' : '' ?>>Perempuan</option>
                         </select>
@@ -99,7 +99,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group">
                         <label for="kelas">Kelas</label>
                         <select class="form-control" name="kelas" id="kelas">
-                            <option disabled selected>-- Pilih Kelas --</option>
+                            <option disabled>-- Pilih Kelas --</option>
                             <?php
                             $query = mysqli_query($koneksi, "SELECT * FROM kelas");
                             while ($k = mysqli_fetch_array($query)) {

@@ -58,7 +58,7 @@ if (isset($_GET['action'])) {
                                 <td><?= $result['id_kelas']; ?></td>
                                 <td><?= $result['nm_kelas']; ?></td>
                                 <td>
-                                    <a href="index.php?page=kelas&action=hapus&id=<?= $result['id_kelas']; ?>">
+                                    <a href="index.php?page=kelas&action=hapus&id=<?= $result['id_kelas']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus kelas ini?')">
                                         <span class="badge badge-danger">Hapus</span>
                                     </a>
 

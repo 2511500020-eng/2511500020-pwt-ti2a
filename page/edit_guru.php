@@ -80,7 +80,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group">
                         <label for="jenkel">Jenis Kelamin</label>
                         <select class="form-control" name="jenkel" id="jenkel">
-                            <option disabled selected>-- Pilih Jenis Kelamin -- </option>
+                            <option disabled>-- Pilih Jenis Kelamin -- </option>
                             <option value="Laki-laki" <?= ($edit['jenkel'] == 'Laki-laki') ? 'selected' : '' ?>>Laki-laki</option>
                             <option value="Perempuan" <?= ($edit['jenkel'] == 'Perempuan') ? 'selected' : '' ?>>Perempuan</option>
                         </select>
@@ -89,7 +89,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group">
                         <label for="pend_terakhir">Pendidikan Terakhir</label>
                         <select class="form-control" name="pend_terakhir" id="pend_terakhir">
-                            <option disabled selected>-- Pilih Pendidikan Terakhir --</option>
+                            <option disabled>-- Pilih Pendidikan Terakhir --</option>
                             <option value="Strata 2" <?= ($edit['pend_terakhir'] == 'Strata 2') ? 'selected' : '' ?>>Strata 2</option>
                             <option value="Strata 1" <?= ($edit['pend_terakhir'] == 'Strata 1') ? 'selected' : '' ?>>Strata 1</option>
                             <option value="Diploma 3" <?= ($edit['pend_terakhir'] == 'Diploma 3') ? 'selected' : '' ?>>Diploma 3</option>

@@ -92,7 +92,11 @@ if (isset($_POST['username'])) {
     $password = $_POST['password'];
 
   if (empty($username) || empty($password)) {
-        echo "Data Tidak Boleh kosong";
+        echo '<div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+        Data tidak boleh kosong
+        </div>';
   } else {
     $userquery = mysqli_fetch_array(mysqli_query($koneksi, 
     "SELECT * FROM users WHERE username = '$username'"));

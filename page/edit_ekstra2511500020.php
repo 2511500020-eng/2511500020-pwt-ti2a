@@ -91,7 +91,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group">
                         <label for="semester020">Semester</label>
                         <select class="form-control" name="semester020" id="semester020">
-                            <option disabled selected>-- Pilih Semester -- </option>
+                            <option disabled>-- Pilih Semester -- </option>
                             <option value=1 <?= ($edit['semester020'] == 1) ? 'selected' : '' ?>>1</option>
                             <option value=2 <?= ($edit['semester020'] == 2) ? 'selected' : '' ?>>2</option>
                         </select>
@@ -100,7 +100,7 @@ if (isset($_POST['tambah'])) {
                     <div class="form-group">
                         <label for="thn_ajaran020">Tahun Ajaran</label>
                         <select class="form-control" name="thn_ajaran020" id="thn_ajaran020">
-                            <option disabled selected>-- Pilih Tahun AJaran -- </option>
+                            <option disabled>-- Pilih Tahun AJaran -- </option>
                             <option value="2025/2026" <?= ($edit['thn_ajaran020'] == '2025/2026') ? 'selected' : '' ?>>2025/2026</option>
                             <option value="2024/2025" <?= ($edit['thn_ajaran020'] == '2024/2025') ? 'selected' : '' ?>>2024/2025</option>
                             <option value="2023/2024" <?= ($edit['thn_ajaran020'] == '2023/2024') ? 'selected' : '' ?>>2023/2024</option>

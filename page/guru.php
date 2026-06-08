@@ -13,6 +13,7 @@ if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
         $kd = $_GET['kd'];
 
+        mysqli_query($koneksi, "DELETE FROM users WHERE username = '$kd'");
         $query = mysqli_query($koneksi, "DELETE FROM guru WHERE kd_guru = '$kd'");
 
         if ($query) {
