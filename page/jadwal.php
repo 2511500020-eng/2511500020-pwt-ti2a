@@ -75,10 +75,6 @@ if (isset($_GET['action'])) {
                                         <a href="index.php?page=jadwal&action=hapus&id=<?= $result['id_jadwal']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus jadwal ini?')">
                                             <span class="badge badge-danger">Hapus</span>
                                         </a>
-
-                                        <a href="index.php?page=edit_jadwal&id=<?= $result['id_jadwal']; ?>">
-                                            <span class="badge badge-warning">Edit</span>
-                                        </a>  
                                     </td>
                                 </tr>
                             <?php } ?>
